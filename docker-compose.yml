@@ -1,0 +1,10 @@
+services:
+  api:
+    build:
+      dockerfile: ./Dockerfile
+    container_name: blog-backend
+    restart: unless-stopped
+    command: npm run start
+
+    ports:
+      - 4000:4000
