@@ -2,8 +2,9 @@ import { ApolloServer } from '@apollo/server'
 import { startStandaloneServer } from '@apollo/server/standalone'
 
 //GraphQl scalar types : Int Float String Boolean ID
-const typeDefs = /* GraphQL */ `
+export const typeDefs = /* GraphQL */ `
   type Query {
+    hello: String!
     title: String!
     price: Float!
     releaseYear: Int!
@@ -12,8 +13,9 @@ const typeDefs = /* GraphQL */ `
   }
 `
 
-const resolvers = {
+export const resolvers = {
   Query: {
+    hello: () => 'world',
     title: () => 'Bosch vacum cleaner',
     price: () => 82.99,
     releaseYear: () => 2023,
@@ -27,8 +29,8 @@ const server = new ApolloServer({
   resolvers,
 })
 
-const { url } = await startStandaloneServer(server, {
+startStandaloneServer(server, {
   listen: { port: 4000 },
+}).then(server => {
+  console.log(`🚀  Server ready at: ${server.url}`)
 })
-
-console.log(`🚀  Server ready at: ${url}`)
