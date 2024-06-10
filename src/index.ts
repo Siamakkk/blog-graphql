@@ -16,11 +16,6 @@ export function createAolloServer() {
   const resolvers = {
     Query: {
       hello: () => 'world',
-      title: () => 'Bosch vacum cleaner',
-      price: () => 82.99,
-      releaseYear: () => 2023,
-      rating: () => 4.8,
-      inStock: () => true,
     },
   }
 
