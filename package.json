@@ -4,9 +4,9 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "start:dev": "nodemon ./dist/index.js",
-    "start": "node ./dist/index.js",
-    "test": "./node_modules/.bin/jest --verbose ./tests"
+    "start:dev": "nodemon ./dist/server.js",
+    "start": "node ./dist/server.js",
+    "test": "./node_modules/.bin/jest ./tests"
   },
   "type": "module",
   "keywords": [],
